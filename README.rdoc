@@ -10,12 +10,12 @@ Hier sind kurz die benutzten Komponente:
     Sphinx via Thinking Sphinx
     Paperclip für Uploads
     MySQL Datenbank
-
-Das Capistrano deploy.rb liegt bei unter:
-
-    config/deploy.rb
 	
-database.yml und deploy.rb der eigenen Konfiguration anpassen. Dann der erste Deploy:
+Capistrano Konfiguration:
+
+    sample_deploy.rb
+
+config/deploy.rb der eigenen Konfiguration anpassen. Dann der erste Deploy:
 
     cap deploy:setup
     cap deploy:check
@@ -31,7 +31,7 @@ Thinking Sphinx starten:
 		
 In crontab:
 
-    rake thinkgin_sphinx:index RAILS_ENV=production
+    rake thinking_sphinx:index RAILS_ENV=production
 
 Zum Testen (lokal):
 

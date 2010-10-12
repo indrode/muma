@@ -4,4 +4,5 @@ tmp/*
 public/system/*
 db/sphinx/*
 config/database.yml
+config/database.yml.production
 config/deploy.rb
