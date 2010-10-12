@@ -32,3 +32,11 @@ Feature: signing up for the application
 		And I am on the home page
 		When I follow "log in"
 		Then I should be on the login page
+		
+	Scenario: deny signup when already logged in
+		Given I am logged in as a user
+		And I am on the home page
+		When I go to the sign up page
+		Then I should see "You must be logged out to access this page."
+		And I should be on the homepage
+		
