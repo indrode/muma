@@ -1,0 +1,38 @@
+## Music Manager
+
+Demo unter: http://mm.zenpunch.com
+
+Hier sind kurz die benutzten Komponente:
+
+    Blueprint
+    Authlogic für die Authentifizierung
+    HAML (mit nifty-generators)
+    Sphinx via Thinking Sphinx
+    Paperclip für Uploads
+    MySQL Datenbank
+
+Das Capistrano deploy.rb liegt bei unter:
+
+    config/deploy.rb
+	
+database.yml und deploy.rb der eigenen Konfiguration anpassen. Dann der erste Deploy:
+
+    cap deploy:migrations
+
+Wenn man will, etwas seed data:
+
+    rake db:seed RAILS_ENV=production	
+
+Thinking Sphinx starten:
+
+    rake thinking_sphinx:configure RAILS_ENV=production && rake thinking_sphinx:start RAILS_ENV=production && rake thinking_sphinx:index RAILS_ENV=production
+		
+In crontab:
+
+    rake thinkgin_sphinx:index RAILS_ENV=production
+
+Zum Testen (lokal):
+
+    sudo rake
+
+	
