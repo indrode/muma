@@ -11,7 +11,7 @@ describe UsersController do
   describe "routing" do
 
     it "recognizes signup route" do
-      { :get => "/signup" }.should route_to(:controller => "users", :action => "new")
+      { :get => "/users/new" }.should route_to(:controller => "users", :action => "new")
     end
 
     it "recognizes and generates user list" do
