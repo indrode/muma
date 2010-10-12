@@ -1,0 +1,22 @@
+- title h(@album.title) + " - New Track"
+
+= form_for @track do |f|
+  = f.error_messages
+  = f.hidden_field :album_id, :value => @album.id
+  %p
+    = f.label :tracknumber
+    %br
+    = f.text_field :tracknumber
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :duration
+    %br
+    = f.text_field :duration
+  %p
+    = f.submit
+
+
+= link_to "back to album page", :controller => 'albums', :action => 'show', :id => @album.id

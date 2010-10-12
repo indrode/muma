@@ -1,0 +1,20 @@
+- title "Artists"
+
+- unless @artists.empty?  
+  %table
+    %tr
+      %th Name
+      %th Genre
+      %th Country
+    - for artist in @artists
+      %tr
+        %td= artist.name
+        %td= artist.genre
+        %td= artist.country
+        %td= link_to "view albums", :controller => 'artists', :action => 'show', :id => artist.id
+- else
+  %p= "No albums found."
+
+%p
+  = link_to "New Artist", :controller => 'artists', :action => 'new'
+  = link_to "back to home", root_path

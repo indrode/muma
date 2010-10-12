@@ -1,0 +1,11 @@
+%div#header
+  = link_to "Music Manager", root_path
+
+  %span#loginarea
+    - if current_user
+      = "Welcome " + h(current_user.login) + "! Not you?"
+      \#{link_to "Log out", logout_path} |
+    - else
+      = link_to "Sign up", signup_path
+      or
+      \#{link_to "log in", login_path}.

@@ -1,0 +1,13 @@
+one:
+  id: 1
+  login: siegfried
+  persistence_token: ad6734hkjafs
+  crypted_password: dfs7834hda
+  password_salt: as9783429ijoo
+
+two:
+  id: 2
+  login: detlef
+  persistence_token: dfsaiu39823
+  crypted_password: afs9832jk
+  password_salt: dsj3223jkkk

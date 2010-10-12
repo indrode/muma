@@ -17,6 +17,8 @@ Das Capistrano deploy.rb liegt bei unter:
 	
 database.yml und deploy.rb der eigenen Konfiguration anpassen. Dann der erste Deploy:
 
+    cap deploy:setup
+    cap deploy:check
     cap deploy:migrations
 
 Wenn man will, etwas seed data:

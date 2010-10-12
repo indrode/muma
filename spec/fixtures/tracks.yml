@@ -1,0 +1,27 @@
+one:
+  id: 1
+  title: Battery
+  duration: "5:11"
+  tracknumber: 1
+  album_id: 1
+
+two:
+  id: 2
+  title: Master of Puppets
+  duration: "8:34"
+  tracknumber: 2
+  album_id: 1
+
+three:
+  id: 3
+  title: The Thing That Should Not Be
+  duration: "6:35"
+  tracknumber: 3
+  album_id: 1
+  
+four:
+  id: 4
+  title: Battery (Metallica Cover)
+  duration: "5:11"
+  tracknumber: 1
+  album_id: 4

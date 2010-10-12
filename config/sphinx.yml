@@ -1,0 +1,3 @@
+production:
+  pid_file: /home/sobaman/sphinx/searchd.pid
+  searchd_files: /home/sobaman/muma/shared/db/sphinx

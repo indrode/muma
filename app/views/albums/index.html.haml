@@ -1,0 +1,19 @@
+- title h(@user.login) + "'s albums"
+
+- unless @albums.empty?
+  %table
+    %tr
+      %th Title
+      %th Artist
+      %th Label
+      %th Released
+    - for album in @albums
+      %tr
+        %td= link_to album.title, :controller => 'albums', :action => 'show', :id => album.id
+        %td= album.artist.name
+        %td= album.label
+        %td= album.release
+- else
+  %p= "No albums found."
+  
+%p= link_to "back to users", list_path

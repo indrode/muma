@@ -1,0 +1,21 @@
+- title "New Artist"
+
+= form_for @artist do |f|
+  = f.error_messages
+  %p
+    = f.label :name, "Artist Name"
+    %br
+    = f.text_field :name
+  %p
+    = f.label :genre
+    %br
+    = f.text_field :genre
+  %p
+    = f.label :country
+    %br
+    = f.text_field :country
+  %p
+    = f.submit
+
+
+%p= link_to "Back to List", artists_path

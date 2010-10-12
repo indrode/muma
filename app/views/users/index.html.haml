@@ -1,0 +1,28 @@
+- title "Music Manager"
+
+- if current_user
+  %p
+    This is your personal music manager. Click on the link to access your music.
+    %p= link_to "view my artists", artists_path
+        
+- else
+  %p
+    Please log in to create your music collection. Or click on the link below to view current music by other users. You may also search for existing albums or tracks.
+
+%p= link_to "view the list of users", list_path
+
+= form_for :search_album, :url => :search_albums do |f|
+  = f.error_messages
+  %p
+    = f.label :term, "Search for albums"
+    %br
+    = f.text_field :term
+    = f.submit "search albums"
+    
+= form_for :search_track, :url => :search_tracks do |f|
+  = f.error_messages
+  %p
+    = f.label :term, "Search for tracks"
+    %br
+    = f.text_field :term
+    = f.submit "search tracks"

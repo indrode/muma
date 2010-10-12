@@ -1,0 +1,44 @@
+- title h(@album.artist.name) + ' - ' + h(@album.title) + ' (' + h(@album.release.year) + ')'
+%p= @album.label
+
+- unless @cover.nil?
+  - if @cover.artwork.file?
+    %img{:alt => @album.label, :height => "200", :src => @cover.artwork.url}
+
+%h2= "Track List"
+- unless @tracks.empty?
+  %table
+    %tr
+      %th Number
+      %th Title
+      %th Length
+    - for t in @tracks
+      %tr
+        %td= t.tracknumber
+        %td= t.title
+        %td= t.duration
+- else
+  %p= "No tracks found."
+
+
+- if @album.user == current_user
+  %p= link_to "add a new track", :controller => 'tracks', :action => 'new', :id => @album.id
+
+%h2= "Comments"
+
+- for c in @comments
+  .comment
+    %p.commentinfo
+      = h(c.author) + " wrote on " + h(c.posted)
+      %br
+      = simple_format(c.body)
+
+%p= " "
+
+%p= link_to "add a new comment", :controller => 'comments', :action => 'new', :id => @album.id
+
+- if @album.user == current_user
+  %p= link_to "back to albums", :controller => 'artists', :action => 'show', :id =>  @album.artist.id
+- else
+  %p= link_to "back to the list of users", list_path
+

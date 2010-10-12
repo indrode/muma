@@ -1,0 +1,26 @@
+!!!
+%html
+
+  %head
+    %title
+      = yield(:title) || "Untitled"
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    %link{:rel=>"stylesheet", :href=>"/stylesheets/screen.css", :media=>"screen", :type=>"text/css"}
+    %link{:rel=>"stylesheet", :href=>"/stylesheets/print.css", :media=>"print", :type=>"text/css"}
+    <!--[if IE]>
+    %link{:rel=>"stylesheet", :href=>"/stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
+    < ![endif]-->
+    = stylesheet_link_tag "application"
+    = csrf_meta_tag
+    = yield(:head)
+
+  %body
+    #container
+      = render :partial => "/users/login"
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+
+      - if show_title?
+        %h1= yield(:title)
+
+      = yield

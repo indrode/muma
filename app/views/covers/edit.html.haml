@@ -1,0 +1,23 @@
+- title h(@album.artist.name) + ' - ' + h(@album.title) + ' (' + h(@album.release.year) + ')'
+
+%h2
+  = "Add/edit Album Cover"
+  
+- unless @cover.nil?
+  - if @cover.artwork.file?
+    %img{:alt => @album.label, :height => "200", :src => @cover.artwork.url}
+
+
+= form_for @cover, :html => { :multipart => true } do |f|
+  
+  = f.error_messages
+  = f.hidden_field :album_id, :value => @album.id
+  %p
+    = f.label :artwork
+    %br
+    = f.file_field :artwork
+  %p
+    = f.submit
+
+
+%p= link_to "Back to List", "/artists/"+@album.artist.id.to_s

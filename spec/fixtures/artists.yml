@@ -1,0 +1,41 @@
+one:
+  id: 1
+  name: Aerosmith
+  genre: rock
+  country: USA
+  user_id: 1
+
+two:
+  id: 2
+  name: Metallica
+  genre: heavy metal
+  country: USA
+  user_id: 1
+
+three:
+  id: 3
+  name: Portishead
+  genre: trip-hop
+  country: UK
+  user_id: 1
+
+four:
+  id: 4
+  name: Radiohead
+  genre: alternative
+  country: UK
+  user_id: 100
+
+five:
+  id: 5
+  name: Eminem
+  genre: hip hop
+  country: USA
+  user_id: 2
+
+six:
+  id: 6
+  name: Muse
+  genre: alternative rock
+  country: UK
+  user_id: 2

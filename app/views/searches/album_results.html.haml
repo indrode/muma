@@ -1,0 +1,19 @@
+- title "Search Results: " + h(@term)
+
+- unless @albums.empty?
+  %table
+    %tr
+      %th Title
+      %th Artist
+      %th Label
+      %th Release
+    - for album in @albums
+      %tr
+        %td= link_to album.title, :controller => 'albums', :action => 'show', :id => album.id
+        %td= album.artist.name
+        %td= album.label
+        %td= album.release
+- else
+  %p= "No albums found."
+  
+%p= link_to "back to home", root_path

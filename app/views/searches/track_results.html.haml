@@ -1,0 +1,21 @@
+- title "Search Results: " + h(@term)
+
+- unless @tracks.empty?
+  %table
+    %tr
+      %th Number
+      %th Title
+      %th Duration
+      %th Artist
+      %th Album
+    - for t in @tracks
+      %tr
+        %td= t.tracknumber
+        %td= t.title
+        %td= t.duration
+        %td= t.album.artist.name
+        %td= t.album.title
+- else
+  %p= "No tracks found."
+  
+%p= link_to "back to home", root_path

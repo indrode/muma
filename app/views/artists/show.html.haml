@@ -1,0 +1,21 @@
+- title h(@artist.name)
+
+- unless @albums.empty?  
+  %table
+    %tr
+      %th Title
+      %th Label
+      %th
+      %th
+    - for a in @albums
+      %tr
+        %td= a.title
+        %td= a.label
+        %td= link_to "view album details / add tracks", :controller => 'albums', :action => 'show', :id => a.id
+        %td= link_to "add album cover", :controller => 'covers', :action => 'edit', :id => a.id
+- else
+  %p= "No albums found."
+  
+%p 
+  = link_to "add a new album", :controller => 'albums', :action => 'new', :id => @artist.id
+  = link_to "back to all artists", :controller => 'artists', :action => 'index'

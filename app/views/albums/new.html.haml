@@ -1,0 +1,22 @@
+- title h(@artist.name) + " - New Album"
+
+= form_for @album do |f|
+  = f.error_messages
+  = f.hidden_field :artist_id, :value => @artist.id
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :label
+    %br
+    = f.text_field :label
+  %p
+    = f.label :release
+    %br
+    = f.date_select :release, :start_year => 1920
+  %p
+    = f.submit
+
+
+%p= link_to "Back to List", "/artists/"+@artist.id.to_s

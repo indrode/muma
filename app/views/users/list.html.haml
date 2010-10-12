@@ -1,0 +1,12 @@
+- title "Users"
+
+%table
+  %tr
+    %th User Name
+    %th 
+  - for user in @user
+    %tr
+      %td= user.login
+      %td= link_to "view "+user.login+"'s albums", :controller => 'albums', :action => 'index', :id => user.id
+      
+%p= link_to "back to home", root_path

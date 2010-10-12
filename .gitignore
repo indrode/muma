@@ -1,0 +1,7 @@
+.bundle
+log/*
+tmp/*
+public/system/*
+db/sphinx/*
+config/database.yml
+config/deploy.rb
