@@ -36,3 +36,14 @@ Feature: creating a new artist
 		And I press "Create Comment"
 		Then I should see "Invalid Fields"
 		And I should see "Diamond Dogs - New Comment"
+		
+	Scenario: adding a comment with tags
+		Given I am logged in as a user
+		And I added an artist
+		And I added an album
+		When I follow "view album details / add tracks"	  
+		And I follow "add a new comment"
+		And I fill in "Body" with "Lorem \nipsum <b>dolor</b>"
+		And I press "Create Comment"
+		Then I should see "peter wrote"
+		And I should not see "Lorem <br />ipsum <b>dolor</b>"
