@@ -9,6 +9,8 @@
   %p
     Please log in to create your music collection. Or click on the link below to view current music by other users. You may also search for existing albums or tracks.
 
+%p= v2.0 "second 2"
+
 %p= link_to "view the list of users", list_path
 
 = form_for :search_album, :url => :search_albums do |f|
